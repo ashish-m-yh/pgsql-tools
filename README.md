@@ -26,7 +26,7 @@ This project provides practical tools that solve these problems.
 
 ## Open Source Features
 
-* PgSQL Log file insights
+* PgSQL Basic Log file insights
 
 
 ## Commercial Edition Roadmap
@@ -56,7 +56,7 @@ Generate operational reports covering:
 
 ---
 
-### PostgreSQL Log Intelligence
+### PostgreSQL Advanced Log Intelligence
 
 Extract actionable insights from PostgreSQL logs.
 
