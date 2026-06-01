@@ -153,8 +153,4 @@ If these tools help your team:
 
 [ashishmukherjee@gmail.com](mailto:ashishmukherjee@gmail.com)
 
-**GitHub Issues**
-
-Use GitHub Issues for bug reports and feature requests.
 ---
-
