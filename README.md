@@ -29,7 +29,7 @@ This project provides practical tools that solve these problems.
 * PgSQL Log file insights
 
 
-## Commercial Edition
+## Commercial Edition Roadmap
 
 ### PostgreSQL Lock Analyzer
 
