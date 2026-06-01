@@ -107,24 +107,9 @@ Available services include:
 
 ### Performance Optimization
 
-* Slow query tuning
-* Index design
-* Workload analysis
-* Capacity planning
-
 ### Database Reliability
 
-* HA architecture reviews
-* Replication design
-* Backup validation
-* Disaster recovery planning
-
 ### Compliance & Security
-
-* Database audits
-* Data anonymization strategy
-* Security hardening
-* Regulatory readiness
 
 ### Custom Development
 
@@ -137,7 +122,7 @@ Available services include:
 
 ## Who Uses These Tools?
 
-* Data teams
+* Data engineers
 * Database administrators
 * Managed service providers
 * Engineering consultancies
@@ -154,7 +139,7 @@ If these tools help your team:
 
 🔧 Contribute improvements
 
-💼 Engage me for consulting
+💼 Engage us for consulting
 
 ---
 
