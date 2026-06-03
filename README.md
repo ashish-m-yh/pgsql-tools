@@ -26,10 +26,16 @@ This project provides practical tools that solve these problems.
 
 ## Open Source Features
 
-* PgSQL Basic Log file insights
-
+* Database Bloat Reporting 
 
 ## Commercial Edition Roadmap
+
+### Database Bloat Analysis
+
+* Alerting by Email & Slack
+* Integrations with monitoring dashboards
+* Data archival recommendations
+* Detailed table, index reporting
 
 ### PostgreSQL Lock Analyzer
 
