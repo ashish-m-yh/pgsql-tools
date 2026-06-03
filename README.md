@@ -37,6 +37,8 @@ This project provides practical tools that solve these problems.
 * Data archival recommendations
 * Detailed table, index reporting
 
+---
+
 ### PostgreSQL Lock Analyzer
 
 Analyze lock waits, blocking chains, and deadlock risks.
