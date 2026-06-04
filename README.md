@@ -4,7 +4,7 @@ Open-source PostgreSQL tools for operations, security, compliance, performance, 
 
 Built by engineers who work with PostgreSQL in production.
 
-Increase your database management productivity and cut your DBA costs!
+Improve your database reliability, reduce downtimes and cut your DBA costs!
 
 ---
 
