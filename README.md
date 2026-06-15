@@ -73,12 +73,6 @@ Safely anonymize production data for:
 * Analytics
 * AI workloads
 
-Features:
-
-* Deterministic masking
-* Configurable rules
-* Referential integrity preservation
-
 ---
 
 ### PostgreSQL Compliance Scanner
@@ -94,55 +88,7 @@ Checks include:
 
 ---
 
-## Consulting Services
-
-Need help with PostgreSQL?
-
-Available services include:
-
-### Performance Optimization
-
-### Database Reliability
-
-### Compliance & Security
-
-### Custom Development
-
-* Internal PostgreSQL tooling
-* Automation workflows
-* Data platform integrations
-* Observability solutions
-
----
-
-## Who Uses These Tools?
-
-* Data engineers
-* Database administrators
-* Managed service providers
-* Engineering consultancies
-
----
-
-## Support the Project
-
-If these tools help your team:
-
-⭐ Star the repository
-
-🐛 Open issues
-
-🔧 Contribute improvements
-
-💼 Engage us for consulting
-
----
-
 ## Contact
-
-**Commercial Licensing**
-
-[ashishmukherjee@gmail.com](mailto:ashishmukherjee@gmail.com)
 
 **Consulting Services**
 
