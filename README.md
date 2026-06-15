@@ -41,19 +41,6 @@ This project provides practical tools that solve these problems.
 
 ---
 
-### PostgreSQL Lock Analyzer
-
-Analyze lock waits, blocking chains, and deadlock risks.
-
-Features:
-
-* Lock dependency visualization
-* Blocking query identification
-* Historical lock analysis
-* Performance recommendations
-
----
-
 ### PostgreSQL Health Checks
 
 Generate operational reports covering:
