@@ -18,15 +18,15 @@ SELECT
         2
     ) AS dead_pct,
     COALESCE(last_autovacuum, last_vacuum) AS last_vacuumed
-FROM pg_stat_user_tables
-WHERE n_live_tup > 0
-  AND (
+    FROM pg_stat_user_tables
+    WHERE n_live_tup > 0
+    AND (
         COALESCE(last_autovacuum, last_vacuum) IS NULL
         OR COALESCE(last_autovacuum, last_vacuum) < now() - interval '3 days'
       )
-  AND n_dead_tup > 10000 
-  AND n_dead_tup::numeric / NULLIF(n_live_tup, 0) >= 0.5
-ORDER BY dead_pct DESC, n_dead_tup DESC;
+    AND n_dead_tup > 10000 
+    AND n_dead_tup::numeric / NULLIF(n_live_tup, 0) >= 0.5
+    ORDER BY dead_pct DESC, n_dead_tup DESC;
 
 EOF
 )
