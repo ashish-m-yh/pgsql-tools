@@ -8,6 +8,9 @@ fi
 
 db=$1
 
+echo List of \(Possibly\) Redundant Tables
+echo
+
 SQL=$(cat<<EOF
     SELECT
     schemaname,
@@ -21,6 +24,27 @@ EOF
 )
 
 psql -c "$SQL" $db
+
+echo List of Duplicate Indexes
+echo
+
+SQL=$(
+       cat<<'EOF'
+       SELECT PG_SIZE_PRETTY(SUM(PG_RELATION_SIZE(idx))::bigint) as size,
+       (array_agg(idx))[1] as idx1, (array_agg(idx))[2] as idx2,
+       (array_agg(idx))[3] as idx3, (array_agg(idx))[4] as idx4
+       FROM (
+	SELECT indexrelid::regclass as idx, (indrelid::text ||E'\n'|| indclass::text ||E'\n'|| indkey::text ||E'\n'||
+        COALESCE(indexprs::text,'')||E'\n' || COALESCE(indpred::text,'')) as key FROM pg_index) sub
+        GROUP BY key HAVING count(*)>1
+	ORDER BY SUM(PG_RELATION_SIZE(idx)) DESC;
+EOF
+)
+
+psql -c "$SQL" $db
+
+echo List of \(Possibly\) Redundant Indexes
+echo
 
 SQL=$(cat<<EOF
     SELECT
@@ -45,6 +69,9 @@ EOF
 )
 
 psql -c "$SQL" $db
+
+echo List of \(Possibly\) Redundant Functions
+echo
 
 SQL=$(cat<<EOF
     SELECT
