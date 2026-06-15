@@ -14,12 +14,10 @@ Managing PostgreSQL at scale involves much more than backups and monitoring.
 
 Teams often struggle with:
 
-* Database performance bottlenecks
-* Lock contention and deadlocks
+* Database bloat
 * Compliance requirements
 * Data privacy and anonymization
 * Slow incident investigation
-* Capacity planning
 * Operational visibility
 
 This project provides practical tools that solve these problems.
