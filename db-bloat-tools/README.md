@@ -20,9 +20,9 @@ If unset, `psql` uses local socket authentication and your OS user.
 
 ## The Tools
 
-/db-bloat-report.sh <dbname>
+### /db-bloat-report.sh <dbname>
 
-### What it reports
+* What it reports *
 
 Largest tables (public schema) — Top 10 tables by total relation size (table + indexes + TOAST), with human-readable and byte sizes.
 
