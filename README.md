@@ -24,11 +24,11 @@ This project provides practical tools that solve these problems.
 
 ---
 
-## Open Source Features
+## Open Source Tools
 
 * Database Bloat Reporting 
 
-## Commercial Edition Roadmap
+## Roadmap
 
 ### Database Bloat Analysis
 
