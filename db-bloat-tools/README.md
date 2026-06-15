@@ -20,7 +20,9 @@ If unset, `psql` uses local socket authentication and your OS user.
 
 ## The Tools
 
-### /db-bloat-report.sh <dbname>
+### DB Bloat Basic Report
+
+./db-bloat-report.sh <dbname>
 
 * What it reports *
 
