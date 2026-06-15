@@ -10,27 +10,28 @@ fi
 db=$1
 
 echo
-echo View Largest Tables in public schema
-echo 'table | pretty size | size'
+echo View Largest Tables
+echo
 
 psql -c "SELECT table_name, PG_SIZE_PRETTY(PG_TOTAL_RELATION_SIZE(QUOTE_IDENT(table_name))), PG_TOTAL_RELATION_SIZE(QUOTE_IDENT(table_name))
-FROM information_schema.tables WHERE table_schema = 'public' ORDER BY 3 DESC LIMIT 10;" $db
+FROM information_schema.tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema') ORDER BY 3 DESC LIMIT 10;" $db
 
 echo
 echo View Largest Schemas
+echo
 
 SQL=$(cat<<EOF
 
 WITH
 schemas AS (
-SELECT schemaname AS name, SUM(PG_RELATION_SIZE(QUOTE_IDENT(schemaname) || '.' || QUOTE_IDENT(tablename)))::bigint AS size FROM pg_tables WHERE schemaname IN('public', 'po', 'dashboard', 'backup', 'generated_report_tables') GROUP BY schemaname
+SELECT schemaname AS name, SUM(PG_RELATION_SIZE(QUOTE_IDENT(schemaname) || '.' || QUOTE_IDENT(tablename)))::bigint AS size FROM pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema') GROUP BY schemaname
 ),
 
 db AS (
     SELECT pg_database_size(current_database()) AS size
 )
 
-SELECT schemas.name, pg_size_pretty(schemas.size) AS absolute_size, schemas.size::float / (SELECT size FROM db)  * 100 AS relative_size FROM schemas ORDER BY relative_size DESC;
+SELECT schemas.name, PG_SIZE_PRETTY(schemas.size) AS absolute_size, schemas.size::float / (SELECT size FROM db)  * 100 AS relative_size FROM schemas ORDER BY relative_size DESC;
 EOF
 )
 
@@ -48,7 +49,7 @@ WITH index_stats AS (
     JOIN pg_index i ON i.indexrelid = c.oid
     JOIN pg_namespace n ON n.oid = c.relnamespace
     LEFT JOIN pg_stat_user_indexes s ON s.indexrelid = c.oid
-    WHERE c.relkind = 'i' and c.relname !~ 'pg_'
+    WHERE c.relkind = 'i' and c.relname !~ 'pg_' AND c.relname !~ '_pkey'
 )
 SELECT
     schema_name,
@@ -61,4 +62,5 @@ EOF
 
 echo
 echo View Largest Indexes 
+echo
 psql -c "$SQL" $db
