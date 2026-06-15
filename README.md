@@ -39,18 +39,6 @@ This project provides practical tools that solve these problems.
 
 ---
 
-### PostgreSQL Health Checks
-
-Generate operational reports covering:
-
-* Replication health
-* Index usage
-* Table bloat
-* Storage growth
-* Vacuum effectiveness
-
----
-
 ### PostgreSQL Advanced Log Intelligence
 
 Extract actionable insights from PostgreSQL logs.
